@@ -16,17 +16,25 @@
   <script type="text/babel">
     const person = {
       firstName: "Mira",
-      lastName: "Eerikäinen"
+      lastName: "Eerikäinen" + "!"
     }
     
-    const element = (
-      <h3>
-        Howdy, {person.firstName} {person.lastName}
+    // const element = (
+    //   <h3>
+    //     Howdy, {person.firstName} {person.lastName}
+    //   </h3>
+    // );
+
+    function Greeting(props) {
+      return (
+        <h3>
+        {props.text} {person.firstName} {person.lastName}
       </h3>
-    );
+      )
+    }
 
     ReactDOM.render(
-    element,
+    <Greeting text="Howdy, "/>,
     document.getElementById('root')
     );
     
